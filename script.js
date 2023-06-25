@@ -54,10 +54,6 @@ function displayTodos() {
     taskCheck.classList.add("todo-check")
     taskCheck.type = "radio"
     taskCheck.checked = todo.done
-    if (todo.done === true) {
-      taskInput.style.textDecoration = "line-through"
-      taskInput.style.color = "#ddddd3"
-    }
 
     //create delete button
     const deleteBtn = document.createElement("button")
@@ -83,10 +79,19 @@ function displayTodos() {
     taskElem.appendChild(editIcon)
     taskElem.appendChild(deleteIcon)
 
+    //Display items in the todos array in localStorage
+    if (todo.done === true) {
+      taskInput.style.textDecoration = "line-through"
+      taskInput.style.color = "#ddddd3"
+      editIcon.style.opacity = "0.2"
+    }
+
+    //checkbox
     taskCheck.addEventListener("click", (e) => {
       if (taskInput.style.textDecoration === "line-through") {
         taskInput.style.textDecoration = "none"
         taskInput.style.color = "black"
+        editIcon.style.opacity = "1"
 
         taskCheck.checked = false
 
@@ -94,6 +99,7 @@ function displayTodos() {
       } else {
         taskInput.style.textDecoration = "line-through"
         taskInput.style.color = "#ddddd3"
+        editIcon.style.opacity = "0.2"
         taskCheck.checked = true
 
         todo.done = true
