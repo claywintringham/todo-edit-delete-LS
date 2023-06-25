@@ -1,13 +1,40 @@
-/* .bubble {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 20px;
-	height: 20px;
-	border-radius: 999px;
-	border: 2px blue;
-	box-shadow: black;
-} */
+ input:checked {
+  /* accent-color: rgb(212, 208, 208); */
+  opacity: 0.5;
+ }
+
+ input[type="checkbox"] {
+  appearance: none;
+  background-color: #fff;
+  margin-right: 20px;
+  margin-top: 1px;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.1em solid currentColor;
+  /* border-radius: 0.15em; */
+  border-radius: 1em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+ }
+ 
+ input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  /* box-shadow: inset 1em 1em var(--grey-800); */
+  box-shadow: inset 1em 1em var(--grey-700);
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
 
 
 h1 {
@@ -18,24 +45,6 @@ h1 {
 .task-item{
   display: flex;
   align-content: center;
-}
-
-.todo-check {
- margin-right:20px;
- cursor: pointer;
- /* outline: 3px solid black; */
-
-}
-
-.todo-input {
-  cursor: pointer;
-}
-
-
-input:checked {
- accent-color: rgb(212, 208, 208);
- opacity: 0.15;
-
 }
 
 

@@ -52,7 +52,7 @@ function displayTodos() {
     //taskCheck refers to checkbox
     const taskCheck = document.createElement("input") //checkbox
     taskCheck.classList.add("todo-check")
-    taskCheck.type = "radio"
+    taskCheck.type = "checkbox"
     taskCheck.checked = todo.done
 
     //create delete button
