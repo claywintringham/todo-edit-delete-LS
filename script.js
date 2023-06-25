@@ -1,5 +1,4 @@
 var dt = new Date().toDateString()
-
 document.getElementById("date-time").innerHTML = dt
 
 window.addEventListener("load", () => {
@@ -57,6 +56,7 @@ function displayTodos() {
     taskCheck.checked = todo.done
     if (todo.done === true) {
       taskInput.style.textDecoration = "line-through"
+      taskInput.style.color = "#ddddd3"
     }
 
     //create delete button
@@ -100,7 +100,6 @@ function displayTodos() {
       }
 
       localStorage.setItem("todos", JSON.stringify(todos))
-      DisplayTodos()
     })
 
     editIcon.addEventListener("click", (e) => {
