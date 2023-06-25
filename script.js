@@ -103,16 +103,17 @@ function displayTodos() {
     })
 
     editIcon.addEventListener("click", (e) => {
-      if (taskInput.style.textDecoration === "none") {
-        taskInput.removeAttribute("readonly")
-        taskInput.focus()
-        taskInput.addEventListener("blur", (e) => {
-          taskInput.setAttribute("readonly", true)
-          todo.content = e.target.value
-          localStorage.setItem("todos", JSON.stringify(todos))
-          displayTodos()
-        })
+      if (taskInput.style.textDecoration === "line-through") {
+        return
       }
+      taskInput.removeAttribute("readonly")
+      taskInput.focus()
+      taskInput.addEventListener("blur", (e) => {
+        taskInput.setAttribute("readonly", true)
+        todo.content = e.target.value
+        localStorage.setItem("todos", JSON.stringify(todos))
+        displayTodos()
+      })
     })
 
     //delete button functionality
